@@ -1,1 +1,1 @@
-# neurorise.github.io
+# https://buyneurorise.vercel.app

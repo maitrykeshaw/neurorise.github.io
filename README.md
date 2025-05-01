@@ -1,1 +1,1 @@
-# https://buyneurorise.vercel.app
+# https://buyneurorise.vercel.app/

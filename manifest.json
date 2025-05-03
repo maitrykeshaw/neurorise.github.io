@@ -1,12 +1,12 @@
 {
-  "name":"PWA Tutorial",
-  "short_name":"PWA",
+  "name":"NeuroRise™ (Official) | Get Upto $780 Off Today + Free Shipping",
+  "short_name":"NeuroRise™ ",
   "start_url":"index.html",
   "display":"standalone",
   "background_color":"#5900b3",
   "theme_color":"#FF5733",
   "scope": ".",
-  "description":"This is a PWA tutorial.",
+  "description":"NeuroRise is an excellent ear and brain health supplement aimed at reducing tinnitus, hearing loss and cognitive function.",
   "icons":[
   {
   "src":"icons/favicon-192x192.png",                     

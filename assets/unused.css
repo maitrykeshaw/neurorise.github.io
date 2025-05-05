@@ -11,6 +11,12 @@ body {
 .container {
   overflow: hidden;
 }
+.containerWithVisibleOverflow {
+  overflow: visible;
+}
+[data-imagelink]:not([data-imagelink=""]) {
+  cursor: pointer;
+}
 .hide {
   display: none;
 }
@@ -22,6 +28,14 @@ body {
 }
 .innerContent {
   word-wrap: break-word;
+}
+.ea-buttonElevate {
+  transition: 0.2s;
+  box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 0);
+}
+.ea-buttonElevate:hover {
+  transform: translateY(-10px);
+  box-shadow: 0px 8px 5px -5px rgba(0, 0, 0, 0.25);
 }
 .ea-buttonBounce {
   animation: bounce 1.5s infinite;
@@ -73,10 +87,10 @@ body {
     box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 0);
   }
 } /*!
-   * Bootstrap v3.1.1 (http://getbootstrap.com)
-   * Copyright 2011-2014 Twitter, Inc.
-   * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
-   */ /*! normalize.css v3.0.0 | MIT License | git.io/normalize */
+ * Bootstrap v3.1.1 (http://getbootstrap.com)
+ * Copyright 2011-2014 Twitter, Inc.
+ * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
+ */ /*! normalize.css v3.0.0 | MIT License | git.io/normalize */
 html {
   font-family: sans-serif;
   -ms-text-size-adjust: 100%;
@@ -189,6 +203,9 @@ a:focus {
 img {
   vertical-align: middle;
 }
+.img-circle {
+  border-radius: 50%;
+}
 h1,
 h2 {
   font-family: inherit;
@@ -206,6 +223,10 @@ h1 {
 }
 h2 {
   font-size: 30px;
+}
+ul {
+  margin-top: 0;
+  margin-bottom: 10px;
 }
 .container {
   margin-right: auto;
@@ -232,10 +253,13 @@ h2 {
   margin-left: -15px;
   margin-right: -15px;
 }
+.col-md-2,
 .col-md-3,
-.col-md-4,
+.col-md-5,
 .col-md-6,
+.col-md-7,
 .col-md-8,
+.col-md-9,
 .col-md-12 {
   position: relative;
   min-height: 1px;
@@ -243,27 +267,39 @@ h2 {
   padding-right: 15px;
 }
 @media (min-width: 992px) {
+  .col-md-2,
   .col-md-3,
-  .col-md-4,
+  .col-md-5,
   .col-md-6,
+  .col-md-7,
   .col-md-8,
+  .col-md-9,
   .col-md-12 {
     float: left;
   }
   .col-md-12 {
     width: 100%;
   }
+  .col-md-9 {
+    width: 75%;
+  }
   .col-md-8 {
     width: 66.66666667%;
+  }
+  .col-md-7 {
+    width: 58.33333333%;
   }
   .col-md-6 {
     width: 50%;
   }
-  .col-md-4 {
-    width: 33.33333333%;
+  .col-md-5 {
+    width: 41.66666667%;
   }
   .col-md-3 {
     width: 25%;
+  }
+  .col-md-2 {
+    width: 16.66666667%;
   }
 }
 @font-face {
@@ -319,17 +355,11 @@ h2 {
 .row {
   padding: 10px;
 }
-.padding10-top {
-  padding-top: 10px;
-}
 .padding20-top {
   padding-top: 20px;
 }
 .padding40-top {
   padding-top: 40px;
-}
-.padding10-bottom {
-  padding-bottom: 10px;
 }
 .padding20-bottom {
   padding-bottom: 20px;
@@ -350,25 +380,26 @@ h2 {
 .radius10 {
   border-radius: 10px;
 }
-.radius15 {
-  border-radius: 15px;
+.radius25 {
+  border-radius: 25px;
 }
 .padding5 {
   padding: 5px !important;
-}
-.padding10 {
-  padding: 10px !important;
 }
 .cornersBottom {
   border-top-left-radius: 0;
   border-top-right-radius: 0;
 }
-.borderSolid.border3px {
-  border-width: 3px;
+.borderSolid.border1px {
+  border-width: 1px;
   border-style: solid;
 }
-.borderSolid.border5px {
-  border-width: 5px;
+.borderSolid.border2px {
+  border-width: 2px;
+  border-style: solid;
+}
+.borderSolid.border3px {
+  border-width: 3px;
   border-style: solid;
 }
 .noBorder {
@@ -377,11 +408,30 @@ h2 {
 .borderLight {
   border-color: rgba(0, 0, 0, 0.7);
 }
+.borderLightBottom {
+  border-top: none !important;
+  border-left: none !important;
+  border-right: none !important;
+  border-bottom-color: rgba(0, 0, 0, 0.7);
+}
+.shadow30 {
+  -webkit-box-shadow: 0 2px 5px 2px rgba(0, 0, 0, 0.3);
+  -moz-box-shadow: 0 2px 5px 2px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 2px 5px 2px rgba(0, 0, 0, 0.3);
+}
+.shadow40 {
+  -webkit-box-shadow: 0 2px 5px 2px rgba(0, 0, 0, 0.4);
+  -moz-box-shadow: 0 2px 5px 2px rgba(0, 0, 0, 0.4);
+  box-shadow: 0 2px 5px 2px rgba(0, 0, 0, 0.4);
+}
+.border1px {
+  background-position-y: -1px;
+}
+.border2px {
+  background-position-y: -2px;
+}
 .border3px {
   background-position-y: -3px;
-}
-.border5px {
-  background-position-y: -5px;
 }
 .bgNoRepeat {
   background-repeat: no-repeat !important;
@@ -392,6 +442,16 @@ h2 {
   background-attachment: fixed !important;
   background-repeat: repeat repeat !important;
   background-position: center center;
+}
+.bgCover100 {
+  background-size: 100% auto !important;
+  -webkit-background-size: 100% auto !important;
+  background-repeat: no-repeat !important;
+}
+.bgCover101 {
+  background-size: 100% 100% !important;
+  -webkit-background-size: 100% 100% !important;
+  background-repeat: no-repeat !important;
 }
 .modalBackdropWrapper {
   position: fixed;
@@ -435,6 +495,9 @@ h2 {
 .elMargin0 {
   margin-top: 0px;
 }
+.elAlign_left {
+  text-align: left;
+}
 .elAlign_center {
   text-align: center;
 }
@@ -451,11 +514,20 @@ h2 {
 .elHeadlineWrapper .elHeadline span {
   padding: 0px;
 }
+.elHeadline u {
+  border-bottom: 2px solid inherit;
+}
+.hsSize1 {
+  font-size: 16px;
+}
 .hsSize2 {
   font-size: 24px;
 }
 .hsSize3 {
   font-size: 32px;
+}
+.lh2 {
+  line-height: 1.5em;
 }
 .lh4 {
   line-height: 1.3em;
@@ -463,14 +535,23 @@ h2 {
 .lh3 {
   line-height: normal;
 }
-.deCapitalize {
-  text-transform: capitalize;
-}
 .de1pxLetterSpacing {
   letter-spacing: 1px;
 }
-.de2pxLetterSpacing {
-  letter-spacing: 2px;
+.de3pxLetterSpacing {
+  letter-spacing: 3px;
+}
+.hsTextShadow1 {
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2);
+}
+.hsTextShadow2 {
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.4);
+}
+.hsTextShadow3 {
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+}
+.elHeadline[data-opacity="1"] {
+  opacity: 1;
 }
 .de-image-block img {
   max-width: 100%;
@@ -478,6 +559,12 @@ h2 {
   -moz-box-sizing: border-box;
   box-sizing: border-box;
   padding: 0px;
+}
+.elIMG.ximg.img-circle {
+  border-radius: 50% !important;
+}
+.ximg.img-circle {
+  border-radius: 50% !important;
 }
 .elButton {
   margin-right: auto;
@@ -506,9 +593,6 @@ h2 {
 .elButtonPadding2 {
   padding: 9px 25px;
 }
-.elButton .fa_prepended {
-  margin-right: 10px;
-}
 .elButtonSize1 {
   font-size: 18px;
 }
@@ -519,6 +603,14 @@ h2 {
 }
 .elButtonSize1 .elButtonSub {
   font-size: 14px;
+}
+.elButtonFull {
+  display: block;
+  text-align: center;
+  width: 100%;
+}
+.elButtonTxtColor3 {
+  text-shadow: -1px -1px 0px rgba(255, 255, 255, 0.1);
 }
 .elButtonRounded {
   border: 1px solid rgba(0, 0, 0, 0.13);
@@ -543,9 +635,17 @@ h2 {
 .elButtonColor1:hover {
   background-color: #0c69a8;
 }
+.elBtnVP_5 {
+  padding-top: 5px !important;
+  padding-bottom: 5px !important;
+}
 .elBtnVP_10 {
   padding-top: 10px !important;
   padding-bottom: 10px !important;
+}
+.elBtnHP_20 {
+  padding-left: 20px !important;
+  padding-right: 20px !important;
 }
 .elBtnHP_25 {
   padding-left: 25px !important;
@@ -560,48 +660,28 @@ h2 {
 .elButtonCorner60 {
   border-radius: 60px;
 }
-.elBTN_b_none {
-  border: none;
-}
 .elBTN_b_1 {
   border: 1px solid rgba(0, 0, 0, 0.2);
+}
+.elBTN_b_1_3 {
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  border-bottom: 3px solid rgba(0, 0, 0, 0.2);
 }
 .elButtonShadowN1 {
   box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2);
 }
-.elButtonShadowFlatHighlight {
-  -moz-box-shadow: none;
-  -webkit-box-shadow: none;
-  box-shadow: none;
+.elButtonShadowN3 {
+  box-shadow: inset 0 0 0 2px rgba(255, 255, 255, 0.2);
 }
-.elButtonShadowFlatHighlight:hover {
-  box-shadow: inset 0 0px 0px 0 rgba(255, 255, 255, 0.22),
-    0 233px 233px 0 rgba(255, 255, 255, 0.12) inset;
+.elBulletList {
+  padding: 0px;
+  list-style-type: none;
 }
-.elDivider {
-  width: 100%;
-  min-height: 1px;
-  margin: 0px;
+.ssHeadlineSize2 {
+  font-size: 24px;
 }
-.elDividerInner {
-  min-height: 1px;
-}
-.elDivider:after {
-  clear: both;
-  content: ".";
-  display: block;
-  height: 0;
-  visibility: hidden;
-}
-.elDivider {
-  display: inline-block;
-}
-.elDivider {
-  display: block;
-}
-.elDividerStyle1 .elDividerInner {
-  border-top-width: 1px;
-  border-top-style: solid;
+.ssBodySize2 {
+  font-size: 16px;
 }
 .elInput {
   outline: none !important;
@@ -616,12 +696,18 @@ h2 {
   font-weight: 400;
   font-style: normal;
 } /*! Social Likes v3.0.4 by Artem Sapegin - http://sapegin.github.com/social-likes - Licensed MIT */ /*!
-  * Pricely v1.0
-  *
-  * Copyright 2013 - Forever, Weborithm.com
-  *
-  * Designed and built by Weborithm
-  */
+* Pricely v1.0
+*
+* Copyright 2013 - Forever, Weborithm.com
+*
+* Designed and built by Weborithm
+*/
+.faqTitle {
+  padding-bottom: 5px;
+}
+.faqTitle i {
+  margin-right: 5px;
+}
 .payselect-container:visible:last {
   border-bottom: 1px solid #e0e0e0;
 } /*! Swipebox v1.2.8 | Constantin Saguin csag.co | MIT License | github.com/brutaldesign/swipebox */
@@ -700,33 +786,71 @@ h2 {
   .bgCover {
     background-attachment: scroll !important;
   }
+  .bgCover100 {
+    background-size: cover !important;
+    -webkit-background-size: cover !important;
+    background-repeat: repeat repeat !important;
+    background-position: center center;
+  }
 }
 @media only screen and (min-width: 770px) and (max-width: 1170px) {
   .col-inner {
     padding-left: 20px !important;
     padding-right: 20px !important;
   }
+  .fullContainer .col-md-2,
   .fullContainer .col-md-3,
-  .fullContainer .col-md-4,
+  .fullContainer .col-md-5,
   .fullContainer .col-md-6,
+  .fullContainer .col-md-7,
   .fullContainer .col-md-8,
+  .fullContainer .col-md-9,
   .fullContainer .col-md-12 {
     float: left !important;
   }
   .fullContainer .col-md-12 {
     width: 100%;
   }
+  .fullContainer .col-md-9 {
+    width: 75%;
+  }
   .fullContainer .col-md-8 {
     width: 66.66666667%;
+  }
+  .fullContainer .col-md-7 {
+    width: 58.33333333%;
   }
   .fullContainer .col-md-6 {
     width: 50%;
   }
-  .fullContainer .col-md-4 {
-    width: 33.33333333%;
+  .fullContainer .col-md-5 {
+    width: 41.66666667%;
   }
   .fullContainer .col-md-3 {
     width: 25%;
+  }
+  .fullContainer .col-md-2 {
+    width: 16.66666667%;
+  }
+}
+@media only screen and (max-width: 700px) {
+  .mfs_20 {
+    font-size: 20px !important;
+  }
+  .mfs_21 {
+    font-size: 21px !important;
+  }
+  .mfs_22 {
+    font-size: 22px !important;
+  }
+  .mfs_24 {
+    font-size: 24px !important;
+  }
+  .mfs_26 {
+    font-size: 26px !important;
+  }
+  .mfs_28 {
+    font-size: 28px !important;
   }
 }
 @media (max-width: 1170px) {
@@ -742,4 +866,7 @@ h2 {
   .midContainer.containerModal {
     margin-left: -320px;
   }
+}
+.displayImportantTimed {
+  display: block;
 }
